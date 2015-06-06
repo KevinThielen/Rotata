@@ -55,8 +55,8 @@ void Block::rotate()
     bool rotationComplete = false;
     int stepCounter = 0;
     
-    glm::vec2 tempPositions[NUMBER_OF_CELLS][NUMBER_OF_CELLS];
-    std::vector<Block*> tempOwners[NUMBER_OF_CELLS][NUMBER_OF_CELLS];
+    glm::vec2 tempPositions[2][2];
+    std::vector<Block*> tempOwners[2][2];
     
     for(int x = 0; x<NUMBER_OF_CELLS; x++)
     {
