@@ -65,6 +65,18 @@ public:
     {
 	return (color == getPrimaryColor() || color == getSecondaryColor());
     }
+    
+    void rotateSprite(float degrees, glm::vec2 center) 
+    { 
+	glm::vec2 offset = center - (glm::vec2(sprite.getWorldPosition().x, sprite.getWorldPosition().y) + sprite.getSize()*0.5f);
+	
+	sprite.rotateByDegrees(degrees, offset);
+	sprite.setLayer(ELayers::rotators+1);
+	if(hasSecondaryColor)
+	    spriteOverlay.setLayer(ELayers::rotators+2);
+    }
+      
+      
 private:
    std::vector<Block*> owners;
    kte::GameSprite sprite;

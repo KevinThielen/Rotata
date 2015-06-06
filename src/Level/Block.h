@@ -58,7 +58,8 @@ public:
 	
     }
     
-    void rotateSprite(float degrees) { rotator.setRotationInDegrees(degrees); }
+    void rotateSprite(float degrees);
+    
     void pause() { rotator.pauseOnClickListener(); }
 private:
     std::vector<std::vector<Cell*>> cells;

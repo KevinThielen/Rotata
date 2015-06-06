@@ -132,7 +132,6 @@ public:
 	}
 
 	srand(5);
-	blocks[0].rotate();
 	//blocks[0].rotateSprite(45.0f);
 	//shuffle
 	/*for(int i = 0; i<1000 * blocks.size(); i++)
@@ -152,12 +151,18 @@ public:
 	    if(!block.isFinished())
 		return false;
 	}
-	return true;
+	return false;
     }
     void pause()
     {
 	for(auto& block : blocks)
 	    block.pause();
+    }
+    
+    //needed for fancy animations, timer etc
+    void update(float dt)
+    {
+	//    blocks[0].rotateSprite(dt*90);
     }
     
 private:

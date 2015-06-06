@@ -140,3 +140,16 @@ bool Block::isFinished()
     return true;
 }
 
+void Block::rotateSprite(float degrees)
+{
+    background.rotateByDegrees(degrees);
+    rotator.setLayer(ELayers::rotators+3);
+    for(auto& cellRow : cells)
+    {
+	for(auto& cell : cellRow)
+	{
+	    cell->rotateSprite(degrees, getCenter());    
+	}
+    }
+}
+

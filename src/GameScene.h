@@ -64,6 +64,7 @@ public:
 	
 	if(!paused)
 	{
+	    level.update(dt);
 	    if(level.checkWinCondition())
 	    {
 		std::cout<<"GameOver"<<std::endl;
