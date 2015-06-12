@@ -15,9 +15,17 @@ namespace Textures
     const std::string gameOver = "GameOver.png"; 
     const std::string restart = "RestartButton.png"; 
     const std::string next = "NextLevelButton.png"; 
+    const std::string levelSelect = "LevelSelect.png"; 
+    const std::string medal = "medal.png"; 
 }
 
 namespace Animations
 {
+}
+
+namespace Fonts
+{
+    const std::string font = "font.ttf";
+
 }
 #endif

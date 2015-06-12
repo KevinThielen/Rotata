@@ -1,25 +1,20 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 #include <GameObject.h>
+#include <Graphics/Text.h>
+#include <IGameScene.h>
 
 #include "Cell.h"
 #include "Block.h"
 #include "ELayers.h"
+#include "Colors.h"
+#include "LevelData.h"
 
 class Level 
 {
 public:
-    struct BlockDescription
-    {
-	glm::vec2 position;
-	glm::vec4 color;
-	
-	BlockDescription(glm::vec2 position, glm::vec4 color) : position(position), color(color)
-	{
-	    
-	}
-    };
-    void load(kte::GameObject* scene, kte::Resources* res)
+  
+    void load(kte::GameObject* scene, kte::Resources* res, LevelData levelLayout)
     {
 	
 	blocks.clear();
@@ -33,37 +28,29 @@ public:
 	background.setSize(800,600);
 	background.setLayer(ELayers::background);
 	
+	//level name
+	levelText.setFont(res->getFont(Fonts::font));
+	levelText.setColor(glm::vec4(1,1,1,1));
+	levelText.setPosition(25,25);
+	levelText.setString(levelLayout.name);
+	    
+	//timer
+	timerText.setFont(res->getFont(Fonts::font));
+	timerText.setColor(glm::vec4(1,1,1,1));
+	timerText.setPosition(800-300,25);
+	timerText.setString(std::to_string(timer));
+	
+	
 	//create the blocks
-	std::map<std::string, glm::vec4> colors;
-	colors["red"] = glm::vec4(1,0,0,1);
-	colors["blue"] = glm::vec4(0,0,1,1);
-	colors["green"] = glm::vec4(0,1,0,1);
-	colors["yellow"] = glm::vec4(1,1,0,1);
-	colors["purple"] = glm::vec4(1,0,1,1);
-	colors["white"] = glm::vec4(1,1,1,1);
-	
-	
-	//TODO: File/Random generated or with editor
-	std::vector<BlockDescription> levelDescription;
-	levelDescription.push_back(BlockDescription(glm::vec2(1,1) , colors["red"]));
-	levelDescription.push_back(BlockDescription(glm::vec2(0,0) , colors["blue"]));
-	levelDescription.push_back(BlockDescription(glm::vec2(0,2) , colors["green"]));
-	levelDescription.push_back(BlockDescription(glm::vec2(2,2) , colors["purple"]));
-	levelDescription.push_back(BlockDescription(glm::vec2(3,1) , colors["yellow"]));
-	levelDescription.push_back(BlockDescription(glm::vec2(4,0) , colors["red"]));
-	levelDescription.push_back(BlockDescription(glm::vec2(5,1), colors["green"]));
-		
-	
-	
-	
 	int blockCounter = 0;
-	blocks.resize(levelDescription.size());
-	for(auto desc : levelDescription)
+	blocks.resize(levelLayout.blocks.size());
+	float xOffset = (800 - 6*blocks[blockCounter].BLOCK_SIZE) * 0.5f;
+	for(auto desc : levelLayout.blocks)
 	{
 	    glm::vec2 gridPosition = desc.position;
 	    
 	    glm::vec2 blockPosition;
-	    blockPosition.x = blocks[blockCounter].BLOCK_SIZE * (2+gridPosition.x) * 0.5f - blocks[blockCounter].TILE_OFFSET; 
+	    blockPosition.x = blocks[blockCounter].BLOCK_SIZE * (gridPosition.x) * 0.5f - blocks[blockCounter].TILE_OFFSET + xOffset; 
 	    blockPosition.y = blocks[blockCounter].BLOCK_SIZE * (2+gridPosition.y) * 0.5f- blocks[blockCounter].TILE_OFFSET;
 	    
 	    blocks[blockCounter++].load(background.getGameObject(), blockPosition, desc.color, res);
@@ -132,16 +119,15 @@ public:
 	}
 
 	srand(5);
-	//blocks[0].rotateSprite(45.0f);
 	//shuffle
-	/*for(int i = 0; i<1000 * blocks.size(); i++)
+	for(int i = 0; i<1000 * blocks.size(); i++)
 	{
 	    int blockIndex = rand() % blocks.size();
 	    int shuffleTimes = rand() % 4 + 1;
 	    
 	    for(int n = 0; n<shuffleTimes; n++)
 		blocks[blockIndex].rotate();
-	}*/
+	}
     }
     
     bool checkWinCondition()
@@ -151,7 +137,7 @@ public:
 	    if(!block.isFinished())
 		return false;
 	}
-	return false;
+	return true;
     }
     void pause()
     {
@@ -160,15 +146,32 @@ public:
     }
     
     //needed for fancy animations, timer etc
-    void update(float dt)
+    void update(kte::IGameScene* scene, float dt)
     {
-	//    blocks[0].rotateSprite(dt*90);
+	timer += dt;
+	
+	float fractionalDigits = (int)((timer-(int)timer)*100);
+	
+	timerText.setString(std::to_string((int)timer) + "." + std::to_string((int)fractionalDigits));
+	
+	scene->displayText(levelText);
+	scene->displayText(timerText);
     }
     
+    float getTimer() 
+    {
+	int formattedTimer = (int)(timer*100);
+
+	return formattedTimer/100.0f;
+    }
 private:
     std::vector<Block> blocks;
     std::vector<Cell> cells;
     kte::GameSprite background;
+    kte::Text levelText;
+    
+    kte::Text timerText;
+    float timer;
 };
 
 #endif

@@ -129,12 +129,15 @@ bool Block::isFinished()
     glm::vec4 color = cells[0][0]->getPrimaryColor();
     glm::vec4 secondaryColor = cells[0][0]->getSecondaryColor();
     
+    
     for(int x = 0; x<NUMBER_OF_CELLS; x++)
 	for(int y = 0; y<NUMBER_OF_CELLS; y++)
 	{
 	    if(!cells[x][y]->containsColor(color))
 		if(secondaryColor.a == 0 || !cells[x][y]->containsColor(secondaryColor))
 		    return false;
+		else 
+		    color = secondaryColor;
 	}
 	
     return true;

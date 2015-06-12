@@ -6,7 +6,7 @@ add_definitions(-DDEBUG)
 set_property( GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build/")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -pedantic -g")
-set(EMSCRIPTEN 0)
+#set(EMSCRIPTEN 1)
 
 
 
@@ -25,7 +25,6 @@ add_subdirectory(${ENGINE_PATH} KTEngine)
 
 
 IF(EMSCRIPTEN)
-    message(FATAL_ERROR "EMSCRIPTEN BUILD")
     add_definitions(-DRESOURCE_PATH="Resources/")
     set(HEADER_FILES ${HEADER_FILES} "/home/kevin/Desktop/emsdk_portable/emscripten/master/system/include/" "/home/kevin/Desktop/emsdk_portable/emscripten/master/tests/freetype/" "/home/kevin/Desktop/emsdk_portable/emscripten/master/tests/freetype/include/" "/usr/local/include/")
     SET(POSTFIX ".bc")

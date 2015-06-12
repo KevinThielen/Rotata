@@ -8,6 +8,6 @@ out vec4 finalColor;
 
 void main()
 {
-    finalColor =  fragmentColor * texture2D(texture, fragmentUV);
+    finalColor =  fragmentColor;
     finalColor.a = texture2D(texture, fragmentUV).r;
 }
