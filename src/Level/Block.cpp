@@ -1,15 +1,19 @@
 #include "Block.h"
 #include "Cell.h"
+#include "Level.h"
+#include "ELayers.h"
 
 Block::Block()
 {
     
 }
 
-void Block::load(kte::GameObject* scene, glm::vec2 position, glm::vec4 color, kte::Resources* res)
+void Block::load(kte::GameObject* scene, glm::vec2 position, glm::vec4 color, kte::Resources* res, Level* level, kte::Analytics* analytics)
 {
-  this->color = color;
- color = glm::vec4(0,0,0,0);
+    this->level = level;
+    this->color = color;
+    this->res = res;
+    color = glm::vec4(0,0,0,0);
     background = kte::GameSprite(scene, color);
     background.setSize(BLOCK_SIZE, BLOCK_SIZE);
     background.setPosition(position);
@@ -18,13 +22,14 @@ void Block::load(kte::GameObject* scene, glm::vec2 position, glm::vec4 color, kt
     cross = kte::GameSprite(background.getGameObject(), color);
     cross.setSize(BLOCK_SIZE-2*TILE_OFFSET, BLOCK_SIZE-2*TILE_OFFSET);
     cross.setPosition(glm::vec2(TILE_OFFSET, TILE_OFFSET));
-    cross.setLayer(ELayers::blocks);
+    cross.setLayer(ELayers::cross);
 	
-    int rotatorPos = BLOCK_SIZE*0.5f - 32;
+    int rotatorPos = BLOCK_SIZE*0.5f;
     rotator = kte::GameSprite(background.getGameObject(), res->getTexture(Textures::rotator));
     rotator.setSize(64, 64);
-    rotator.setPosition(glm::vec2(rotatorPos,rotatorPos));
+    rotator.setPosition(glm::vec2(rotatorPos-32,rotatorPos-32));
     rotator.setLayer(ELayers::rotators);
+
     
     cells.clear();
     for(int x = 0; x<NUMBER_OF_CELLS; x++)
@@ -36,15 +41,60 @@ void Block::load(kte::GameObject* scene, glm::vec2 position, glm::vec4 color, kt
 	}
     }
  
+     rotator.setOnReleaseEvent
+    (
+	[this, analytics, rotatorPos]()
+	{
+	    //rotate();
+	    rotator.setPosition(rotatorPos - 32 * 1.25f, rotatorPos -32 * 1.25f);
+	    rotator.setSize(1.25f*64, 1.25f*64);
+
+	    this->level->rotate(this);
+	    
+	    if(analytics)
+	    {
+		auto& analyticsRef = *analytics;
+		if(analyticsRef["numberOfRotations"].empty())
+		    analyticsRef["numberOfRotations"] = 0;
+		
+		analyticsRef["numberOfRotations"] = 1 + analyticsRef["numberOfRotations"].asInt(); 
+	    }
+	}
+    );
+    
+    
     rotator.setOnClickEvent
     (
-	[this]()
+	[this, analytics, rotatorPos, level]()
 	{
-	    rotate();
+	    if(!level->isRotating() || level->getRotatingBlock() == this)
+	    {
+		//rotate();
+		rotator.setPosition(rotatorPos - 32 * 1.1f, rotatorPos -32 * 1.1f);
+		rotator.setSize(1.1f*64, 1.1f*64);
+	    }
+	}
+    );
+    
+    rotator.setOnMouseOverEvent(
+	[this, rotatorPos]()
+	{
+	    rotator.setPosition(rotatorPos - 32 * 1.25f, rotatorPos -32 * 1.25f);
+	    rotator.setSize(1.25f*64, 1.25f*64);
+	}
+    );
+    
+    rotator.setOnMouseLeaveEvent(
+	[this, rotatorPos]()
+	{
+	    rotator.setPosition(rotatorPos - 32, rotatorPos -32);
+	    rotator.setSize(1.0f*64, 1.0f*64);
 	}
     );
 
 }
+
+
 
 void Block::rotate()
 {
@@ -72,18 +122,16 @@ void Block::rotate()
 	stepCounter++;
 	
 	Cell* oldCell = cells[xIndex][yIndex]; 
+	
+	
 	xIndex += increment.x;
 	yIndex += increment.y;
-	
-	
-	//movethe old cell to the new cell position
+
+	oldCell->toggle();
 
 	oldCell->setPosition(tempPositions[xIndex][yIndex]);
 	oldCell->setOwners(tempOwners[xIndex][yIndex]);
 	
-	//if((xIndex+yIndex)%2)
-	  oldCell->mirror();
-
 	//change ownerchip of tiles
 	for(auto& owner : oldCell->getOwners())
 	{
@@ -112,7 +160,7 @@ void Block::rotate()
 	else if(yIndex + increment.y < 0)
 	{
 	    rotationComplete = true;
-	    increment.x =0;
+	    increment.x = 0;
 	    increment.y *= -1;
 	}
     }while(!rotationComplete);
@@ -136,17 +184,34 @@ bool Block::isFinished()
 	    if(!cells[x][y]->containsColor(color))
 		if(secondaryColor.a == 0 || !cells[x][y]->containsColor(secondaryColor))
 		    return false;
-		else 
+		else if(secondaryColor.a != 0)
 		    color = secondaryColor;
 	}
 	
     return true;
 }
 
+void Block::moveLayer(int increment)
+    {
+
+	background.setLayer(ELayers::blocks+ increment);
+	cross.setLayer(ELayers::cross  + increment);
+	
+	rotator.setLayer(ELayers::rotators  + increment);
+	
+	for(auto& cellRow : cells)
+	{
+	    for(auto& cell : cellRow)
+	    {
+		cell->moveLayer(increment);   
+	    }
+	}  
+    }
+
 void Block::rotateSprite(float degrees)
 {
     background.rotateByDegrees(degrees);
-    rotator.setLayer(ELayers::rotators+3);
+  
     for(auto& cellRow : cells)
     {
 	for(auto& cell : cellRow)

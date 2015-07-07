@@ -5,17 +5,21 @@
 #include <GameEngine.h>
 #include "MenuScene.h"
 #include "GameData.h"
-#include <Utility/Serializer.h>
+#include <Utility/Analytics.h>
 
+
+/*
 void update()
 {
     static kte::GameEngine* g = kte::GameEngine::instance();
     
     g->update();
-}
+}*/
  
 int main()
 {
+  
+    kte::Analytics::enable(false);
     kte::GameEngine* gameEngine = kte::GameEngine::instance();
     
 #if defined(EMSCRIPTEN)

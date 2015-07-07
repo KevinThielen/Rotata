@@ -3,12 +3,14 @@
 
 enum ELayers 
 {
-    blocks = 0,
     background = 1,
-    cells = 2,
-    overlays = 3,
-    rotators = 4,
-    GUI = 10
+    blocks = 2,
+    cross = 3,
+ 
+    cells = 4,
+    overlays = 5,
+    rotators = 6,
+    GUI = 50
 };
 
 

@@ -3,6 +3,8 @@
 #include <GameObject.h>
 #include <Graphics/Text.h>
 #include <IGameScene.h>
+#include <Utility/Time.h>
+#include <Audio/AudioStream.h>
 
 #include "Cell.h"
 #include "Block.h"
@@ -14,9 +16,13 @@ class Level
 {
 public:
   
-    void load(kte::GameObject* scene, kte::Resources* res, LevelData levelLayout)
+    void load(kte::GameObject* scene, kte::Resources* res, LevelData levelLayout, kte::Analytics* analytics)
     {
-	
+	this->res = res;
+	rotatingBlock = nullptr;
+	timer = 0.0f;
+	rotations = 0;
+	rotationTimer = 0.0f;
 	blocks.clear();
 	cells.clear();
 	
@@ -29,22 +35,29 @@ public:
 	background.setLayer(ELayers::background);
 	
 	//level name
-	levelText.setFont(res->getFont(Fonts::font));
-	levelText.setColor(glm::vec4(1,1,1,1));
-	levelText.setPosition(25,25);
+	levelText = kte::Text();
+	levelText.setFont(res->getFont(Fonts::title));
+	levelText.setPosition(5,5);
 	levelText.setString(levelLayout.name);
 	    
 	//timer
-	timerText.setFont(res->getFont(Fonts::font));
-	timerText.setColor(glm::vec4(1,1,1,1));
-	timerText.setPosition(800-300,25);
+	timerText.setFont(res->getFont(Fonts::title));
+	timerText.setColor(Color::BLUE);
+	timerText.setPosition(800-250,5);
 	timerText.setString(std::to_string(timer));
 	
+	
+	rotationText.setFont(res->getFont(Fonts::title));
+	rotationText.setColor(Color::BLUE);
+	rotationText.setPosition(800-150, 100);
+	rotationText.setString("0");
 	
 	//create the blocks
 	int blockCounter = 0;
 	blocks.resize(levelLayout.blocks.size());
 	float xOffset = (800 - 6*blocks[blockCounter].BLOCK_SIZE) * 0.5f;
+	
+	std::vector<glm::vec4> usedColors;
 	for(auto desc : levelLayout.blocks)
 	{
 	    glm::vec2 gridPosition = desc.position;
@@ -53,7 +66,15 @@ public:
 	    blockPosition.x = blocks[blockCounter].BLOCK_SIZE * (gridPosition.x) * 0.5f - blocks[blockCounter].TILE_OFFSET + xOffset; 
 	    blockPosition.y = blocks[blockCounter].BLOCK_SIZE * (2+gridPosition.y) * 0.5f- blocks[blockCounter].TILE_OFFSET;
 	    
-	    blocks[blockCounter++].load(background.getGameObject(), blockPosition, desc.color, res);
+	    if(std::find(usedColors.begin(), usedColors.end(), desc.color) == usedColors.end())
+		usedColors.push_back(desc.color);
+	    
+	    blocks[blockCounter++].load(background.getGameObject(), blockPosition, desc.color, res, this, analytics);
+	}
+	
+	for(auto color : usedColors)
+	{
+	    levelText.addColor(color);
 	}
 	
 	cells.reserve(blocks.size()*4);
@@ -73,7 +94,7 @@ public:
 			glm::vec2 size = glm::vec2(block.TILE_SIZE, block.TILE_SIZE);
 			glm::vec2 position = block.getPosition() + glm::vec2(x*block.TILE_SIZE + (1+x) * block.TILE_OFFSET,y*block.TILE_SIZE + (y+1) * block.TILE_OFFSET);
 			cell.load(background.getGameObject(), position, size, block.getColor(), res);
-			
+		     
 			if((x+y)%2)
 			    cell.mirror();
 
@@ -110,7 +131,9 @@ public:
 				    checkBlock.setCell(newX, newY, &cells.back());
 				    cells.back().addOwner(&checkBlock);
 				    if(checkBlock.getColor() != block.getColor())
-					cells.back().addOverlay(res, checkBlock.getColor());
+				    {
+					cells.back().addOverlay(res, glm::vec2(newX,newY), checkBlock.getColor());
+				    }
 			    }
 			}
 		    }
@@ -118,7 +141,7 @@ public:
 	   }
 	}
 
-	srand(5);
+	srand(3);
 	//shuffle
 	for(int i = 0; i<1000 * blocks.size(); i++)
 	{
@@ -137,23 +160,62 @@ public:
 	    if(!block.isFinished())
 		return false;
 	}
+	
+	audioStream.setAudioData(res->getAudio(Audio::finished));
+	audioStream.play();
 	return true;
     }
-    void pause()
+    void pause(bool pause)
     {
 	for(auto& block : blocks)
-	    block.pause();
+	    block.pause(pause);
     }
     
     //needed for fancy animations, timer etc
     void update(kte::IGameScene* scene, float dt)
     {
-	timer += dt;
+	if(rotatingBlock)
+	{
+
+	    if(dt > 1.0f)
+		dt = 1.0f;
+	    
 	
-	float fractionalDigits = (int)((timer-(int)timer)*100);
+	    
+	    rotationTimer -= dt;
+	    float degrees = 90.f * dt / rotationDuration;
+	    accumulatedRotation += degrees;
+	    rotatingBlock->rotateSprite(degrees);
+	    
+	    if(rotationTimer <= 0.0f)
+	{
+	    rotatingBlock->rotate();
+
+	    while(chainRotation > 0)
+	    {
+		rotatingBlock->rotate();
+		chainRotation--;
+	    }
+	    audioStream2.setAudioData(res->getAudio(Audio::rotationEnd));
+	    audioStream2.play();
+	    rotatingBlock->rotateSprite(-accumulatedRotation);
+	    rotatingBlock->moveLayer(0);
+	    rotatingBlock = nullptr;
+	}
+	}
+	
+	
+	timer += dt;
+	if(rotationScale > 1.0f)
+	    rotationScale -= (2*dt);
+	if(rotationScale < 1.0f) 
+	    rotationScale = 1.0f;
+	
+	float fractionalDigits = (int)((timer-(int)timer)*10);
 	
 	timerText.setString(std::to_string((int)timer) + "." + std::to_string((int)fractionalDigits));
-	
+	rotationText.setString(std::to_string(rotations));
+	rotationText.setSize(rotationScale, rotationScale);
 	scene->displayText(levelText);
 	scene->displayText(timerText);
     }
@@ -164,14 +226,69 @@ public:
 
 	return formattedTimer/100.0f;
     }
+    
+    void rotate(Block* block)
+    {
+	if(rotatingBlock == nullptr)
+	{
+	    accumulatedRotation = 0.0f;
+	    rotatingBlock = block;
+	    rotationTimer = rotationDuration;
+	    rotatingBlock->moveLayer(10);
+	    chainRotation = 0;
+	    rotations++;
+	    rotationScale = 1.5f;
+	    
+	    audioStream.setAudioData(res->getAudio(Audio::rotatorClick));
+	    audioStream.play();
+	  //  audioStream2.setAudioData(res->getAudio(Audio::rotation));
+	//    audioStream2.play();
+	}
+	else if(rotatingBlock == block && chainRotation <= 10)
+	{
+	    audioStream.setAudioData(res->getAudio(Audio::rotatorClick));
+	    audioStream.play();
+	    chainRotation++;
+	    rotationTimer += rotationDuration;
+	    rotations++;
+	    rotationScale = 1.5f;
+	}
+    }
+    
+    bool isRotating()
+    {
+	return !(rotatingBlock == nullptr);
+    }
+    
+    Block* getRotatingBlock()
+    {
+	return rotatingBlock;
+    }
+    
+    unsigned int getRotations() { return rotations; }
 private:
     std::vector<Block> blocks;
     std::vector<Cell> cells;
     kte::GameSprite background;
     kte::Text levelText;
-    
+    kte::Text rotationText;
     kte::Text timerText;
+
+    kte::Resources* res;
+    kte::AudioStream audioStream;
+    kte::AudioStream audioStream2;
+    kte::AudioStream audioStream3;
+    
+    
+    Block* rotatingBlock;
+    
+    float rotationTimer;
+    float accumulatedRotation;
+    const float rotationDuration = 0.75f;
     float timer;
+    float rotationScale = 1.0f;
+    int chainRotation; 
+    unsigned int rotations;
 };
 
 #endif

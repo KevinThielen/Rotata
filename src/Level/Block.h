@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <Graphics/GameSprite.h>
+#include <Utility/Analytics.h>
 /*
  * A block contains n*m Cells and can be rotated
  */
@@ -12,6 +13,7 @@
 
 class Cell;
 
+class Level;
 class Block 
 {
 public:
@@ -23,15 +25,25 @@ public:
     
     Block();
     
-    void load(kte::GameObject* scene, glm::vec2 position, glm::vec4 color, kte::Resources* res);
+    void load(kte::GameObject* scene, glm::vec2 position, glm::vec4 color, kte::Resources* res, Level* level, kte::Analytics* analytics = nullptr);
     void rotate();
     bool isFinished();
     
+    void moveLayer(int i);
     
     void setCell(unsigned int x, unsigned int y, Cell* cell) { cells[x][y] = cell; } 
     Cell* getCell(unsigned int x, unsigned int y) { return cells[x][y];}
     glm::vec4 getColor() { return color; }
     kte::GameObject* getGameObject() { return background.getGameObject(); }
+    
+    
+    void resetRotatorSize()
+    {
+	float rotatorPos = BLOCK_SIZE * 0.5f;
+	rotator.setPosition(rotatorPos - 32 * 1.25f, rotatorPos -32 * 1.25f);
+	rotator.setSize(1.25f*64, 1.25f*64);
+    }
+
     bool contains(Cell* cell) 
     { 
 	for(unsigned int x = 0; x<cells.size(); x++)
@@ -60,16 +72,19 @@ public:
     
     void rotateSprite(float degrees);
     
-    void pause() { rotator.pauseOnClickListener(); }
+    void pause(bool pause) { rotator.pauseOnClickListener(pause); }
 private:
     std::vector<std::vector<Cell*>> cells;
+    kte::Resources* res;
     kte::GameSprite background;
     kte::GameSprite cross;
     kte::GameSprite rotator;
     
+    
+    Level* level;
     glm::vec4 color;
     
-   
+   bool lockRotatorSize;
 };
 
 #endif
