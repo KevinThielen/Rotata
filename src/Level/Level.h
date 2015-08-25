@@ -1,10 +1,11 @@
 #ifndef LEVEL_H
 #define LEVEL_H
+
 #include <GameObject.h>
 #include <Graphics/Text.h>
 #include <IGameScene.h>
 #include <Utility/Time.h>
-#include <Audio/AudioStream.h>
+#include <Audio/AudioSource.h>
 
 #include "Cell.h"
 #include "Block.h"
@@ -23,6 +24,11 @@ public:
 	timer = 0.0f;
 	rotations = 0;
 	rotationTimer = 0.0f;
+	
+	audioStream.initialize();
+   	audioStream2.initialize();
+   	audioStream3.initialize();
+	
 	blocks.clear();
 	cells.clear();
 	
@@ -143,7 +149,7 @@ public:
 
 	srand(3);
 	//shuffle
-	for(int i = 0; i<1000 * blocks.size(); i++)
+	for(unsigned int i = 0; i<1000 * blocks.size(); i++)
 	{
 	    int blockIndex = rand() % blocks.size();
 	    int shuffleTimes = rand() % 4 + 1;
@@ -161,8 +167,7 @@ public:
 		return false;
 	}
 	
-	audioStream.setAudioData(res->getAudio(Audio::finished));
-	audioStream.play();
+	audioStream.play(res->getAudio(Audio::finished));
 	return true;
     }
     void pause(bool pause)
@@ -196,8 +201,7 @@ public:
 		rotatingBlock->rotate();
 		chainRotation--;
 	    }
-	    audioStream2.setAudioData(res->getAudio(Audio::rotationEnd));
-	    audioStream2.play();
+	    audioStream2.play(res->getAudio(Audio::rotationEnd));
 	    rotatingBlock->rotateSprite(-accumulatedRotation);
 	    rotatingBlock->moveLayer(0);
 	    rotatingBlock = nullptr;
@@ -239,15 +243,13 @@ public:
 	    rotations++;
 	    rotationScale = 1.5f;
 	    
-	    audioStream.setAudioData(res->getAudio(Audio::rotatorClick));
-	    audioStream.play();
+	    audioStream.play(res->getAudio(Audio::rotatorClick));
 	  //  audioStream2.setAudioData(res->getAudio(Audio::rotation));
 	//    audioStream2.play();
 	}
 	else if(rotatingBlock == block && chainRotation <= 10)
 	{
-	    audioStream.setAudioData(res->getAudio(Audio::rotatorClick));
-	    audioStream.play();
+	    audioStream.play(res->getAudio(Audio::rotatorClick));
 	    chainRotation++;
 	    rotationTimer += rotationDuration;
 	    rotations++;
@@ -266,6 +268,7 @@ public:
     }
     
     unsigned int getRotations() { return rotations; }
+    
 private:
     std::vector<Block> blocks;
     std::vector<Cell> cells;
@@ -275,9 +278,9 @@ private:
     kte::Text timerText;
 
     kte::Resources* res;
-    kte::AudioStream audioStream;
-    kte::AudioStream audioStream2;
-    kte::AudioStream audioStream3;
+    kte::AudioSource audioStream;
+    kte::AudioSource audioStream2;
+    kte::AudioSource audioStream3;
     
     
     Block* rotatingBlock;

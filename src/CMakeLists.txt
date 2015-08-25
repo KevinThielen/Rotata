@@ -1,5 +1,5 @@
-
 add_subdirectory(Level)
+add_subdirectory(GUI)
 
 set(GAME_SOURCE
 )

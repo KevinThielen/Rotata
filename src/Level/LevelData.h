@@ -14,8 +14,8 @@ struct BlockDescription
     
 struct LevelData 
 {
-    std::vector<BlockDescription> blocks;
     std::string name;
+    std::vector<BlockDescription> blocks;
     
     LevelData(){}
     LevelData(std::string name, std::vector<BlockDescription> blocks) : name(name), blocks(blocks) {}

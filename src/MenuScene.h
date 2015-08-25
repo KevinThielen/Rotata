@@ -4,11 +4,12 @@
 #include <IGameScene.h>
 #include <GameEngine.h>
 #include <Graphics/GameSprite.h>
-#include <Audio/AudioStream.h>
+#include <Audio/AudioSource.h>
 #include <Utility/Serializer.h>
 #include "GameData.h"
 #include "GameScene.h"
 #include "Level/Levels.h"
+#include "OptionsScene.h"
 #include <X11/X.h>
 
 
@@ -33,6 +34,10 @@ public:
 	initDefaultSystem();
 	if(!loadData())
 	    return false;
+	
+	
+	audioStream.initialize();
+	audioStream2.initialize();
 	
 	//read save file
 	serializer.read("save.dat");
@@ -170,8 +175,7 @@ public:
 	menuButtons[START_BUTTON].setOnReleaseEvent(
 	    [this](){
 		changeState(EMenuState::LEVEL_SELECT);
-		    this->audioStream2.setAudioData(resources.getAudio(Audio::menuSelect));
-		    this->audioStream2.play();
+		    this->audioStream2.play(resources.getAudio(Audio::menuSelect));
 	    }
 	);
 	
@@ -180,7 +184,10 @@ public:
 	buttonTexts[1].setColor(Color::BLUE);
 	menuButtons[OPTION_BUTTON].setOnReleaseEvent(
 	    [this](){
-		//changeState(EMenuState::LEVEL_SELECT);
+	
+		    IGameScene* scene = new OptionsScene();
+	
+		    kte::GameEngine::instance()->pushScene(scene);
 	    }
 	);
 	
@@ -268,8 +275,7 @@ public:
 		[this, i]()
 		{
 		    kte::GameEngine* engine = kte::GameEngine::instance();
-		    this->audioStream2.setAudioData(resources.getAudio(Audio::menuSelect));
-		    this->audioStream2.play();
+		    this->audioStream2.play(resources.getAudio(Audio::menuSelect));
 		    
 		    GameScene* scene = new GameScene(levels, i);
 	
@@ -281,8 +287,7 @@ public:
 		{
 		    this->showLevelDescription(i);
 		    this->levelTiles[i].setColor(Color::YELLOW);
-		//    this->audioStream.setAudioData(resources.getAudio(Audio::menuHover));
-		//    this->audioStream.play();
+		    this->audioStream.play(resources.getAudio(Audio::menuHover));
 		}  
 	        );
 	   
@@ -391,8 +396,7 @@ public:
 	
 		    engine->pushScene(scene);
 		    
-		    this->audioStream2.setAudioData(resources.getAudio(Audio::menuSelect));
-		    this->audioStream2.play();
+		    this->audioStream2.play(resources.getAudio(Audio::menuSelect));
 		});
 		
 		levelTiles[i].setOnMouseOverEvent(
@@ -558,8 +562,8 @@ private:
     kte::GameObject* menuNode;
     kte::GameObject* levelDescriptionNode;
     
-    kte::AudioStream audioStream;
-    kte::AudioStream audioStream2;
+    kte::AudioSource audioStream;
+    kte::AudioSource audioStream2;
     
     bool showDescription;
     const bool CHEAT_MODE = false;

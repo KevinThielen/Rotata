@@ -12,8 +12,8 @@
 #include "Resources.h"
 
 class Cell;
-
 class Level;
+
 class Block 
 {
 public:

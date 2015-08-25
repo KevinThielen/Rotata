@@ -320,7 +320,7 @@ public:
 	    return false;
 	if(!resources.loadFontFromFile(Fonts::smallFont, 38))
 	    return false;
-	if(!resources.loadAudioFromFile(Audio::rotation, true))
+	if(!resources.loadAudioFromFile(Audio::rotation))
 	    return false;
 	if(!resources.loadAudioFromFile(Audio::rotationEnd))
 	    return false;

@@ -1,7 +1,5 @@
 #ifndef GAME_DATA_H
 #define GAME_DATA_H
-#include "../../Playground/include/GameData.h"
-
 
 namespace Keys
 {
@@ -24,7 +22,17 @@ namespace Textures
     const std::string checkMark = "checkMark.png"; 
     
     const std::string menuButton = "MenuButton.png"; 
-    const std::string menuWidget = "MenuWidget.png"; 
+    const std::string menuWidget = "MenuWidget.png";
+    
+    //GUI
+    const std::string leftSlider = "Slider_Left.png";
+    const std::string middleSlider = "Slider_Middle.png";
+    const std::string rightSlider = "Slider_Right.png";
+    const std::string sliderCursor = "Slider_Cursor.png";
+    
+    const std::string guiCheckBox= "GUI_CheckBox.png";
+    const std::string guiCheckMark = "GUI_CheckMark.png";
+    
 }
 
 namespace Animations

@@ -1,0 +1,117 @@
+The system is: Linux - 3.13.0-24-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/kevin/Desktop/emsdk_portable/emscripten/master/emcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out.js"
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/kevin/Desktop/emsdk_portable/emscripten/master/emcc 
+Build flags: 
+Id flags: -c
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/kevin/Desktop/emsdk_portable/emscripten/master/emcc 
+Build flags: 
+Id flags: -Aa
+
+The output was:
+0
+clang-3.7: warning: argument unused during compilation: '-Aa'
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out.js"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/kevin/Desktop/emsdk_portable/emscripten/master/em++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out.js"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/kevin/Desktop/emsdk_portable/emscripten/master/em++ 
+Build flags: 
+Id flags: -c
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4120258202/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4120258202.dir/build.make CMakeFiles/cmTryCompileExec4120258202.dir/build
+make[1]: Entering directory `/home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4120258202.dir/testCCompiler.c.o
+/home/kevin/Desktop/emsdk_portable/emscripten/master/emcc    -o CMakeFiles/cmTryCompileExec4120258202.dir/testCCompiler.c.o   -c /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec4120258202
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4120258202.dir/link.txt --verbose=1
+/home/kevin/Desktop/emsdk_portable/emscripten/master/emcc       CMakeFiles/cmTryCompileExec4120258202.dir/testCCompiler.c.o  -o cmTryCompileExec4120258202  
+make[1]: Leaving directory `/home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3180010316/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3180010316.dir/build.make CMakeFiles/cmTryCompileExec3180010316.dir/build
+make[1]: Entering directory `/home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3180010316.dir/CMakeCCompilerABI.c.o
+/home/kevin/Desktop/emsdk_portable/emscripten/master/emcc    -o CMakeFiles/cmTryCompileExec3180010316.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec3180010316
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3180010316.dir/link.txt --verbose=1
+/home/kevin/Desktop/emsdk_portable/emscripten/master/emcc       CMakeFiles/cmTryCompileExec3180010316.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3180010316   
+make[1]: Leaving directory `/home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp'
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2397454930/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2397454930.dir/build.make CMakeFiles/cmTryCompileExec2397454930.dir/build
+make[1]: Entering directory `/home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2397454930.dir/testCXXCompiler.cxx.o
+/home/kevin/Desktop/emsdk_portable/emscripten/master/em++     -o CMakeFiles/cmTryCompileExec2397454930.dir/testCXXCompiler.cxx.o -c /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec2397454930
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2397454930.dir/link.txt --verbose=1
+/home/kevin/Desktop/emsdk_portable/emscripten/master/em++        CMakeFiles/cmTryCompileExec2397454930.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec2397454930  
+make[1]: Leaving directory `/home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1783678159/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1783678159.dir/build.make CMakeFiles/cmTryCompileExec1783678159.dir/build
+make[1]: Entering directory `/home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1783678159.dir/CMakeCXXCompilerABI.cpp.o
+/home/kevin/Desktop/emsdk_portable/emscripten/master/em++     -o CMakeFiles/cmTryCompileExec1783678159.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec1783678159
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1783678159.dir/link.txt --verbose=1
+/home/kevin/Desktop/emsdk_portable/emscripten/master/em++        CMakeFiles/cmTryCompileExec1783678159.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1783678159   
+make[1]: Leaving directory `/home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles/CMakeTmp'
+
+
