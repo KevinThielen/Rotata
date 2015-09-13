@@ -4,3 +4,7 @@ build/*
 .kdev4/*
 .kdev*
 *.kdev4
+webGL/*
+Resources/*
+KTEngine/*
+

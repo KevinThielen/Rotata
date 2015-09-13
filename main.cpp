@@ -6,9 +6,7 @@
 #include "MenuScene.h"
 
 #include "GameData.h"
-#include <Utility/Analytics.h>
-
-
+//#include <Utility/Analytics.h>
 
 void update()
 {
@@ -20,7 +18,7 @@ void update()
 int main()
 {
   
-    kte::Analytics::enable(false);
+ //   kte::Analytics::enable(false);
     kte::GameEngine* gameEngine = kte::GameEngine::instance();
     
     kte::Audio::masterVolume = 0.1f;

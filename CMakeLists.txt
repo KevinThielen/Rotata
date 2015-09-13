@@ -8,7 +8,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -pedantic -g")
 
 
 
-
 set(POSTFIX "")
 set(HEADER_FILES "${PROJECT_SOURCE_DIR}/src/")
 set(SOURCE_FILES main.cpp )

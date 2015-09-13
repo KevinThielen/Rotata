@@ -34,23 +34,23 @@ public:
 	popScene = false;
 
 	
-	level.load(scene.get(), &resources, levels.getLevel(currentLevel), &analytics);
+	level.load(scene.get(), resources, levels.getLevel(currentLevel), &analytics);
 	paused = false;
 	pauseScreen = kte::GameSprite(scene.get(), glm::vec4(0,0,0,0.4f));
 	pauseScreen.setSize(800,600);
 	pauseScreen.setActive(false);
 	pauseScreen.setLayer(ELayers::GUI-3);
 	
-	gameOverScreen = kte::GameSprite(pauseScreen.getGameObject(), resources.getTexture(Textures::gameOver));
+	gameOverScreen = kte::GameSprite(pauseScreen.getGameObject(), resources->getTexture(Textures::gameOver));
 	gameOverScreen.setSize(400,210);
 	gameOverScreen.setPosition((800-400)*0.5f, (600-210)*0.5f);
 	gameOverScreen.setLayer(ELayers::GUI-2);
 	
-	gameOverText.setFont(resources.getFont(Fonts::smallFont));
+	gameOverText.setFont(resources->getFont(Fonts::smallFont38));
 	gameOverText.setPosition(gameOverScreen.getPosition().x +5, gameOverScreen.getPosition().y +5);
 	gameOverText.setColor(Color::WHITE);
 	
-	newBestText.setFont(resources.getFont(Fonts::smallFont));
+	newBestText.setFont(resources->getFont(Fonts::smallFont38));
 	newBestText.setPosition(gameOverText.getPosition().x, gameOverText.getPosition().y + 75);
 	newBestText.setColor(Color::YELLOW);
 	
@@ -59,13 +59,13 @@ public:
 	
 	for(int i =0; i<3; i++)
 	{
-	    gameOverButtons[i] = kte::GameSprite(gameOverScreen.getGameObject(), resources.getTexture(Textures::menuButton));
+	    gameOverButtons[i] = kte::GameSprite(gameOverScreen.getGameObject(), resources->getTexture(Textures::menuButton));
 	    gameOverButtons[i].setSize((gameOverScreen.getSize().x - 40) / 3.0f, 60);
 	    gameOverButtons[i].setPosition(gameOverButtons[i].getSize().x * i +  10 + i*10, gameOverScreen.getSize().y - 70);
 	    gameOverButtons[i].setLayer(ELayers::GUI-1);
 	        
 	    buttontexts[i] = kte::Text();
-	    buttontexts[i].setFont(resources.getFont(Fonts::smallFont));
+	    buttontexts[i].setFont(resources->getFont(Fonts::smallFont38));
 
 	    buttontexts[i].setColor(Color::WHITE);
 	    
@@ -105,7 +105,7 @@ public:
 		paused = false;
 		gameOver = false;
 		pausedPressed = false;
-		level.load(scene.get(), &resources, levels.getLevel(currentLevel), &analytics);
+		level.load(scene.get(), resources, levels.getLevel(currentLevel), &analytics);
 	    }
 	);
 	
@@ -122,7 +122,7 @@ public:
 		paused = false;
 		gameOver = false;
 		pausedPressed = false;
-		level.load(scene.get(), &resources, levels.getLevel(++currentLevel), &analytics);
+		level.load(scene.get(), resources, levels.getLevel(++currentLevel), &analytics);
 	    }
 	    );
 	
@@ -132,15 +132,14 @@ public:
 	pauseTexts.resize(3);
 	for(int i =0; i<3; i++)
 	{
-	    pauseButtons[i] = kte::GameSprite(pauseNode, resources.getTexture(Textures::menuButton));
+	    pauseButtons[i] = kte::GameSprite(pauseNode, resources->getTexture(Textures::menuButton));
 	    pauseButtons[i].setSize(160, 60);
 	    pauseButtons[i].setPosition((800 - 160)*0.5f , (600 - 3*70)*0.5f + i*70);
 	    
-	    std::cout<<"Button Position: "<<pauseButtons[i].getPosition().x<<"/"<<pauseButtons[i].getPosition().y<<std::endl;
 	    pauseButtons[i].setLayer(ELayers::GUI-1);
 	        
 	    pauseTexts[i] = kte::Text();
-	    pauseTexts[i].setFont(resources.getFont(Fonts::smallFont));
+	    pauseTexts[i].setFont(resources->getFont(Fonts::smallFont38));
 
 	    pauseTexts[i].setColor(Color::WHITE);
 	    
@@ -185,7 +184,7 @@ public:
 	  {
 	    pauseScreen.setActive(false);
 	    paused = false;
-	    level.load(scene.get(), &resources, levels.getLevel(currentLevel), &analytics);
+	    level.load(scene.get(), resources, levels.getLevel(currentLevel), &analytics);
 	  }
 	);    
 	pauseButtons[2].setOnReleaseEvent(
@@ -296,37 +295,18 @@ public:
 
     bool loadData()
     {
-        if(!resources.loadTextureFromFile(Textures::overlay))
+     
+	if(!resources->loadAudioFromFile(Audio::rotation))
 	    return false;
-        if(!resources.loadTextureFromFile(Textures::overlayR))
+	if(!resources->loadAudioFromFile(Audio::rotationEnd))
 	    return false;
-	if(!resources.loadTextureFromFile(Textures::cell))
+	if(!resources->loadAudioFromFile(Audio::rotatorClick))
 	    return false;
-	if(!resources.loadTextureFromFile(Textures::background))
+	if(!resources->loadAudioFromFile(Audio::finished))
 	    return false;
-	if(!resources.loadTextureFromFile(Textures::rotator))
+	if(!resources->loadPackage("fonts.kte"))
 	    return false;
-	if(!resources.loadTextureFromFile(Textures::next))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::menuButton))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::gameOver))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::restart))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::levelSelect))
-	    return false;
-	if(!resources.loadFontFromFile(Fonts::title, 86))
-	    return false;
-	if(!resources.loadFontFromFile(Fonts::smallFont, 38))
-	    return false;
-	if(!resources.loadAudioFromFile(Audio::rotation))
-	    return false;
-	if(!resources.loadAudioFromFile(Audio::rotationEnd))
-	    return false;
-	if(!resources.loadAudioFromFile(Audio::rotatorClick))
-	    return false;
-	if(!resources.loadAudioFromFile(Audio::finished))
+	if(!resources->loadPackage("General"))
 	    return false;
 	
 	return true;

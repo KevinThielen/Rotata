@@ -13,6 +13,8 @@
 #include <X11/X.h>
 
 
+#include <fstream>
+
 class MenuScene : public kte::IGameScene
 {
 public:
@@ -31,18 +33,20 @@ public:
     
     virtual bool init()
     {
-	initDefaultSystem();
+	//initDefaultSystem();
 	if(!loadData())
 	    return false;
 	
 	
+	
+//  	kte::GameEngine::instance()->getContext()->setWireframe();
 	audioStream.initialize();
 	audioStream2.initialize();
 	
 	//read save file
 	serializer.read("save.dat");
 	
-	background = kte::GameSprite(scene.get(), resources.getTexture(Textures::background));
+	background = kte::GameSprite(scene.get(), resources->getTexture(Textures::background));
 	background.setSize(800,600);
 	background.setLayer(ELayers::background);
 	
@@ -51,31 +55,31 @@ public:
 	titleText.resize(5);
 
 	titleText[0] = kte::Text();
-	titleText[0].setFont(resources.getFont(Fonts::title));
+	titleText[0].setFont(resources->getFont(Fonts::title118));
 	titleText[0].setPosition((800-300)*0.5f-leftOffset, 20);
 	titleText[0].setString("R");
 	titleText[0].setColor(Color::RED);
 	
 	titleText[1] = kte::Text();
-	titleText[1].setFont(resources.getFont(Fonts::title));
+	titleText[1].setFont(resources->getFont(Fonts::title118));
 	titleText[1].setPosition((800-300)*0.5f+100-leftOffset+25, 20);
 	titleText[1].setString("u");
 	titleText[1].setColor(Color::BLUE);
 	
 	titleText[2] = kte::Text();
-	titleText[2].setFont(resources.getFont(Fonts::title));
+	titleText[2].setFont(resources->getFont(Fonts::title118));
 	titleText[2].setPosition((800-300)*0.5f+180-leftOffset+50, 20);
 	titleText[2].setString("b");
 	titleText[2].setColor(Color::GREEN);
 	
 	titleText[3] = kte::Text();
-	titleText[3].setFont(resources.getFont(Fonts::title));
+	titleText[3].setFont(resources->getFont(Fonts::title118));
 	titleText[3].setPosition((800-300)*0.5f+255-leftOffset+75, 20);
 	titleText[3].setString("i");
 	titleText[3].setColor(Color::PURPLE);
 	
 	titleText[4] = kte::Text();
-	titleText[4].setFont(resources.getFont(Fonts::title));
+	titleText[4].setFont(resources->getFont(Fonts::title118));
 	titleText[4].setPosition((800-300)*0.5f+300-leftOffset+80, 20);
 	titleText[4].setString("x");
 	titleText[4].setColor(Color::YELLOW);
@@ -86,26 +90,26 @@ public:
 	
 	levelDescriptionNode = scene.get()->addChild();
 	
-	levelPanel = kte::GameSprite(levelDescriptionNode, resources.getTexture(Textures::levelDescription));
+	levelPanel = kte::GameSprite(levelDescriptionNode, resources->getTexture(Textures::levelDescription));
 	levelPanel.setSize(250, 150);
 	levelPanel.setPosition(800-levelPanel.getSize().x, 110);
         levelPanel.setLayer(ELayers::background+1);
 	
 	levelDescription.resize(2);
-	levelDescription[0].setFont(resources.getFont(Fonts::font));
+	levelDescription[0].setFont(resources->getFont(Fonts::font));
 	levelDescription[0].setColor(glm::vec4(1,1,1,1));
 	levelDescription[0].setString("");
 	levelDescription[0].setPosition(levelPanel.getPosition().x+5, levelPanel.getPosition().y+5);
 
 	
-	levelDescription[1].setFont(resources.getFont(Fonts::smallFont));
+	levelDescription[1].setFont(resources->getFont(Fonts::smallFont28));
 	levelDescription[1].setColor(glm::vec4(1,1,1,1));
 	levelDescription[1].setString("");
 	levelDescription[1].setPosition(levelPanel.getPosition().x+5, levelPanel.getPosition().y+50);
 	
 	levelDescriptionNode->setActive(false);
 	{
-	    kte::GameSprite widget = kte::GameSprite(menuNode, resources.getTexture(Textures::menuWidget));
+	    kte::GameSprite widget = kte::GameSprite(menuNode, resources->getTexture(Textures::menuWidget));
 	    widget.setPosition(550,160);
 	    widget.setSize(127,127);
 	    widget.setLayer(ELayers::background+2);
@@ -114,7 +118,7 @@ public:
 	}
 	
 	{
-	    kte::GameSprite widget = kte::GameSprite(menuNode, resources.getTexture(Textures::menuWidget));
+	    kte::GameSprite widget = kte::GameSprite(menuNode, resources->getTexture(Textures::menuWidget));
 	    widget.setPosition(600,400);
 	    widget.setSize(127,127);
 	    widget.setLayer(ELayers::background+2);
@@ -123,7 +127,7 @@ public:
 	}
 	
 	{
-	    kte::GameSprite widget = kte::GameSprite(menuNode, resources.getTexture(Textures::menuWidget));
+	    kte::GameSprite widget = kte::GameSprite(menuNode, resources->getTexture(Textures::menuWidget));
 	    widget.setPosition(125,270);
 	    widget.setSize(127,127);
 	    widget.setLayer(ELayers::background+2);
@@ -140,7 +144,7 @@ public:
 	
 	for(unsigned int i = 0; i<3; i++)
 	{
-	   kte::GameSprite button =  kte::GameSprite(menuNode, resources.getTexture(Textures::menuButton));
+	   kte::GameSprite button =  kte::GameSprite(menuNode, resources->getTexture(Textures::menuButton));
 	   button.setSize(175,60);
 	   button.setPosition((800 - 175)*0.5f, 75*i + 200);
 	   button.setLayer(ELayers::background+2);
@@ -148,7 +152,7 @@ public:
 	   menuButtons.push_back(button);
 	   
 	   kte::Text buttonText;
-	   buttonText.setFont(resources.getFont(Fonts::buttonFont));
+	   buttonText.setFont(resources->getFont(Fonts::buttonFont));
 	   buttonText.setPosition(button.getPosition().x+10, button.getPosition().y+15);
 	   buttonTexts.push_back(buttonText);
 	   
@@ -156,8 +160,6 @@ public:
 		[this, i]() 
 		{
 		    this->menuButtons[i].setColor(Color::YELLOW);
-		  //  this->audioStream.setAudioData(resources.getAudio(Audio::menuHover));
-		  //  this->audioStream.play();
 		}  
 	   );
 	   
@@ -175,11 +177,11 @@ public:
 	menuButtons[START_BUTTON].setOnReleaseEvent(
 	    [this](){
 		changeState(EMenuState::LEVEL_SELECT);
-		    this->audioStream2.play(resources.getAudio(Audio::menuSelect));
+		    this->audioStream2.play(resources->getAudio(Audio::menuSelect));
 	    }
 	);
 	
-	buttonTexts[1].setFont(resources.getFont(Fonts::optionsFont));
+	buttonTexts[1].setFont(resources->getFont(Fonts::optionsFont));
 	buttonTexts[1].setString("Options");
 	buttonTexts[1].setColor(Color::BLUE);
 	menuButtons[OPTION_BUTTON].setOnReleaseEvent(
@@ -219,14 +221,14 @@ public:
 	    }
 	    
 	    bool playable = true;
-	    kte::GameSprite tile = kte::GameSprite(levelSelectNode, resources.getTexture(Textures::levelSelect));
+	    kte::GameSprite tile = kte::GameSprite(levelSelectNode, resources->getTexture(Textures::levelSelect));
 	    tile.setSize(tileSize,tileSize);
 	    tile.setPosition(xCounter * tileSize + xOffset, yCounter * tileSize + yOffset);
 	    tile.setLayer(ELayers::background+1);
 
 	    if(!serializer[levels.getLevel(i).name].empty())
 	    {
-		kte::GameSprite flag = kte::GameSprite(tile.getGameObject(), resources.getTexture(Textures::checkMark));
+		kte::GameSprite flag = kte::GameSprite(tile.getGameObject(), resources->getTexture(Textures::checkMark));
 		flag.setSize(tileSize, tileSize);
 		flag.setLayer(ELayers::background+3);
 		completionFlags.push_back(flag);
@@ -235,7 +237,7 @@ public:
 	    }
 	    else if(lastFinishedLevel < i)
 	    {
-		kte::GameSprite flag = kte::GameSprite(tile.getGameObject(), resources.getTexture(Textures::lock));
+		kte::GameSprite flag = kte::GameSprite(tile.getGameObject(), resources->getTexture(Textures::lock));
 		flag.setSize(tileSize, tileSize);
 		flag.setLayer(ELayers::background+3);
 		completionFlags.push_back(flag);
@@ -275,7 +277,7 @@ public:
 		[this, i]()
 		{
 		    kte::GameEngine* engine = kte::GameEngine::instance();
-		    this->audioStream2.play(resources.getAudio(Audio::menuSelect));
+		    this->audioStream2.play(resources->getAudio(Audio::menuSelect));
 		    
 		    GameScene* scene = new GameScene(levels, i);
 	
@@ -287,7 +289,7 @@ public:
 		{
 		    this->showLevelDescription(i);
 		    this->levelTiles[i].setColor(Color::YELLOW);
-		    this->audioStream.play(resources.getAudio(Audio::menuHover));
+		    this->audioStream.play(resources->getAudio(Audio::menuHover));
 		}  
 	        );
 	   
@@ -307,7 +309,7 @@ public:
 	    levelTiles.push_back(tile);
 	    
 	    kte::Text text;
-	    text.setFont(resources.getFont(Fonts::font));
+	    text.setFont(resources->getFont(Fonts::font));
 	    text.setString(std::to_string(i+1));
 	    text.setColor(glm::vec4(1,1,1,1));
 	    text.setPosition(tile.getPosition().x, tile.getPosition().y);
@@ -322,7 +324,7 @@ public:
 	
 	subTitleText = kte::Text();
 	subTitleText.setPosition(5,5);
-	subTitleText.setFont(resources.getFont(Fonts::subTitle));
+	subTitleText.setFont(resources->getFont(Fonts::subTitle));
 	subTitleText.addColor(Color::RED);
 	subTitleText.addColor(Color::BLUE);
 	subTitleText.addColor(Color::GREEN);
@@ -330,14 +332,13 @@ public:
 	subTitleText.addColor(Color::PURPLE);
 	subTitleText.addColor(Color::WHITE);
 	subTitleText.addColor(Color::BLACK);
+
 	
         return true;
     }
 
     void refresh()
     {
-	std::cout<<"Refresh"<<std::endl;
-	
 	//clear old informations
 	for(auto& flag : completionFlags)
 	{
@@ -365,14 +366,14 @@ public:
 	    {
 		lastFinishedLevel++;
 		completionFlags[i].setColor(glm::vec4(1,1,1,1));
-		completionFlags[i].setTexture(resources.getTexture(Textures::checkMark));
+		completionFlags[i].setTexture(resources->getTexture(Textures::checkMark));
 		playable = true;
 	    }
 	    //check if level is the not the next playable level
 	    else if(lastFinishedLevel < i && !CHEAT_MODE)
 	    {
 		completionFlags[i].setColor(glm::vec4(1,1,1,1));
-		completionFlags[i].setTexture(resources.getTexture(Textures::lock));
+		completionFlags[i].setTexture(resources->getTexture(Textures::lock));
 		
 		levelTiles[i].setOnMouseOverEvent(
 		[this, i]()
@@ -396,7 +397,7 @@ public:
 	
 		    engine->pushScene(scene);
 		    
-		    this->audioStream2.play(resources.getAudio(Audio::menuSelect));
+		    this->audioStream2.play(resources->getAudio(Audio::menuSelect));
 		});
 		
 		levelTiles[i].setOnMouseOverEvent(
@@ -419,7 +420,6 @@ public:
 		case EMenuState::LEVEL_SELECT: 
 		{
 		    subTitleText.setString("Select a Level");
-		    this->state = state;
 		    menuNode->setActive(false);
 		    levelSelectNode->setActive(true);
 		    this->state = state;
@@ -444,7 +444,10 @@ public:
    
     virtual void update(float dt)
     {
-        IGameScene::update(dt);
+        
+	
+	static float timer = 0.0f;
+
 	
 	if(state == EMenuState::LEVEL_SELECT)
 	{
@@ -459,52 +462,28 @@ public:
 	{
 	    for(auto& widget : menuWidgets)
 	    {
-		widget.rotateByDegrees(2*dt);
+		widget.rotateByDegrees(5*dt);
 	    }
 	    displayText(buttonTexts);
 	    displayText(titleText);
 	}
 	newDescrption = false;
+
     }
 
     bool loadData()
     {
-	if(!resources.loadTextureFromFile(Textures::levelSelect))
+	if(!resources->loadAudioFromFile(Audio::menuHover))
 	    return false;
-	if(!resources.loadTextureFromFile(Textures::medal))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::menuButton))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::background))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::menuWidget))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::levelDescription))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::lock))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::checkMark))
+	
+	if(!resources->loadAudioFromFile(Audio::menuSelect))
 	    return false;
 	
 	
-	if(!resources.loadFontFromFile(Fonts::font, 24))
+	if(!resources->loadPackage("Game"))
 	    return false;
-	if(!resources.loadFontFromFile(Fonts::title, 118))
-	    return false;
-	if(!resources.loadFontFromFile(Fonts::buttonFont, 38))
-	    return false;
-	if(!resources.loadFontFromFile(Fonts::optionsFont, 24))
-	    return false;
-	if(!resources.loadFontFromFile(Fonts::subTitle, 82))
-	    return false;
-	if(!resources.loadFontFromFile(Fonts::smallFont, 28))
-	    return false;
-	
-	if(!resources.loadAudioFromFile(Audio::menuHover))
-	    return false;
-	
-	if(!resources.loadAudioFromFile(Audio::menuSelect))
-	    return false;
+ 	if(!resources->loadPackage("General"))
+ 	    return false;
 	
 	return true;
     }
@@ -543,6 +522,9 @@ public:
 	levelDescriptionNode->setActive(true);
     }
     
+
+    
+    
 private:
     std::vector<kte::Text> titleText;
     
@@ -564,14 +546,13 @@ private:
     
     kte::AudioSource audioStream;
     kte::AudioSource audioStream2;
-    
+   
     bool showDescription;
-    const bool CHEAT_MODE = false;
+    const bool CHEAT_MODE = true;
     bool newDescrption;
     kte::Serializer serializer;
     
     EMenuState state;
-    
 };
 
 #endif

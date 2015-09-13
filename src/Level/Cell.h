@@ -1,7 +1,7 @@
 #ifndef CELL_H
 #define CELL_H
 #include <Graphics/GameSprite.h>
-#include <Resources.h>
+#include <Resources/Resources.h>
 #include "Block.h"
 #include "GameData.h"
 #include "ELayers.h"
@@ -79,7 +79,6 @@ public:
 	    spriteOverlay.mirror();
     }
     
-    //"hack" for rotation of the overlay(otherwise it would flip its orientation after torating
     void leftSide()
     {
 	if(hasSecondaryColor)

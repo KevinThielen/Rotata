@@ -39,6 +39,8 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/kevin/Desktop/Projects/C++/Rubix/webGL/KTEngine/src/Components/cmake_install.cmake")
   INCLUDE("/home/kevin/Desktop/Projects/C++/Rubix/webGL/KTEngine/src/Messages/cmake_install.cmake")
   INCLUDE("/home/kevin/Desktop/Projects/C++/Rubix/webGL/KTEngine/src/Utility/cmake_install.cmake")
+  INCLUDE("/home/kevin/Desktop/Projects/C++/Rubix/webGL/KTEngine/src/Audio/cmake_install.cmake")
+  INCLUDE("/home/kevin/Desktop/Projects/C++/Rubix/webGL/KTEngine/src/Resources/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

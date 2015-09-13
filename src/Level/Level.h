@@ -42,18 +42,18 @@ public:
 	
 	//level name
 	levelText = kte::Text();
-	levelText.setFont(res->getFont(Fonts::title));
+	levelText.setFont(res->getFont(Fonts::title86));
 	levelText.setPosition(5,5);
 	levelText.setString(levelLayout.name);
 	    
 	//timer
-	timerText.setFont(res->getFont(Fonts::title));
+	timerText.setFont(res->getFont(Fonts::title86));
 	timerText.setColor(Color::BLUE);
 	timerText.setPosition(800-250,5);
 	timerText.setString(std::to_string(timer));
 	
 	
-	rotationText.setFont(res->getFont(Fonts::title));
+	rotationText.setFont(res->getFont(Fonts::title86));
 	rotationText.setColor(Color::BLUE);
 	rotationText.setPosition(800-150, 100);
 	rotationText.setString("0");
@@ -216,12 +216,13 @@ public:
 	    rotationScale = 1.0f;
 	
 	float fractionalDigits = (int)((timer-(int)timer)*10);
-	
-	timerText.setString(std::to_string((int)timer) + "." + std::to_string((int)fractionalDigits));
-	rotationText.setString(std::to_string(rotations));
-	rotationText.setSize(rotationScale, rotationScale);
+
+
+	//
+//	rotationText.setString(std::to_string(rotations));
+	//rotationText.setSize(rotationScale, rotationScale);
 	scene->displayText(levelText);
-	scene->displayText(timerText);
+	//scene->displayText(timerText);
     }
     
     float getTimer() 
@@ -244,8 +245,7 @@ public:
 	    rotationScale = 1.5f;
 	    
 	    audioStream.play(res->getAudio(Audio::rotatorClick));
-	  //  audioStream2.setAudioData(res->getAudio(Audio::rotation));
-	//    audioStream2.play();
+
 	}
 	else if(rotatingBlock == block && chainRotation <= 10)
 	{

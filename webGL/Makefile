@@ -183,6 +183,30 @@ home/kevin/Desktop/Projects/C++/KTEngine/external/jsoncpp/src/lib_json/json_writ
 	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/external/jsoncpp/src/lib_json/json_writer.cpp.s
 .PHONY : home/kevin/Desktop/Projects/C++/KTEngine/external/jsoncpp/src/lib_json/json_writer.cpp.s
 
+home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.o: home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.o
+
+# target to build an object file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o
+
+home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.i: home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.i
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.i
+
+# target to preprocess a source file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.i:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.i
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.i
+
+home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.s: home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.s
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.s
+
+# target to generate assembly for a file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.s:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.s
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.s
+
 home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.o: home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp.o
 .PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.o
 
@@ -230,30 +254,6 @@ home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.s: home/kevin/Desktop/Pr
 home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.s:
 	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.s
 .PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.s
-
-home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.o: home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o
-.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.o
-
-# target to build an object file
-home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o:
-	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o
-.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o
-
-home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.i: home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.i
-.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.i
-
-# target to preprocess a source file
-home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.i:
-	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.i
-.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.i
-
-home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.s: home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.s
-.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.s
-
-# target to generate assembly for a file
-home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.s:
-	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.s
-.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.s
 
 home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/GameSprite.o: home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/GameSprite.cpp.o
 .PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/GameSprite.o
@@ -471,6 +471,30 @@ home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.s:
 	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.s
 .PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.s
 
+home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.o: home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.o
+
+# target to build an object file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o
+
+home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.i: home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.i
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.i
+
+# target to preprocess a source file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.i:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.i
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.i
+
+home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.s: home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.s
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.s
+
+# target to generate assembly for a file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.s:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.s
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.s
+
 home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/AnimationSystem.o: home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/AnimationSystem.cpp.o
 .PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/AnimationSystem.o
 
@@ -518,6 +542,30 @@ home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/RenderSystem.s: home/kevin/
 home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/RenderSystem.cpp.s:
 	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/RenderSystem.cpp.s
 .PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/RenderSystem.cpp.s
+
+home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.o: home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.o
+
+# target to build an object file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o
+
+home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.i: home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.i
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.i
+
+# target to preprocess a source file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.i:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.i
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.i
+
+home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.s: home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.s
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.s
+
+# target to generate assembly for a file
+home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.s:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.s
+.PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.s
 
 home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.o: home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp.o
 .PHONY : home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.o
@@ -591,6 +639,30 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Level/Block.o: src/Level/Block.cpp.o
+.PHONY : src/Level/Block.o
+
+# target to build an object file
+src/Level/Block.cpp.o:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o
+.PHONY : src/Level/Block.cpp.o
+
+src/Level/Block.i: src/Level/Block.cpp.i
+.PHONY : src/Level/Block.i
+
+# target to preprocess a source file
+src/Level/Block.cpp.i:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.i
+.PHONY : src/Level/Block.cpp.i
+
+src/Level/Block.s: src/Level/Block.cpp.s
+.PHONY : src/Level/Block.s
+
+# target to generate assembly for a file
+src/Level/Block.cpp.s:
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.s
+.PHONY : src/Level/Block.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -609,15 +681,15 @@ help:
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/external/jsoncpp/src/lib_json/json_writer.o"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/external/jsoncpp/src/lib_json/json_writer.i"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/external/jsoncpp/src/lib_json/json_writer.s"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.o"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.i"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.s"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.o"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.i"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.s"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.o"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.i"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.s"
-	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.o"
-	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.i"
-	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.s"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/GameSprite.o"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/GameSprite.i"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/GameSprite.s"
@@ -645,12 +717,18 @@ help:
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.o"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.i"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.s"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.o"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.i"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.s"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/AnimationSystem.o"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/AnimationSystem.i"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/AnimationSystem.s"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/RenderSystem.o"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/RenderSystem.i"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Systems/RenderSystem.s"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.o"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.i"
+	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.s"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.o"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.i"
 	@echo "... home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.s"
@@ -660,6 +738,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Level/Block.o"
+	@echo "... src/Level/Block.i"
+	@echo "... src/Level/Block.s"
 .PHONY : help
 
 

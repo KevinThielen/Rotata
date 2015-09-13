@@ -9,7 +9,7 @@
  */
 
 #include "ELayers.h"
-#include "Resources.h"
+#include "Resources/Resources.h"
 
 class Cell;
 class Level;

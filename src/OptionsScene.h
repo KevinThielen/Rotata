@@ -29,21 +29,21 @@ public:
 	
 	gui = GUIElement(scene.get());
 	slider = GUISlider(&gui, glm::vec2(50, 150));
-	slider.setLeftPart(resources.getTexture(Textures::leftSlider), glm::vec2(2,3), glm::vec2(0,0)); 
-	slider.setMiddlePart(resources.getTexture(Textures::middleSlider), glm::vec2(100,3), glm::vec2(2,0)); 
-	slider.setRightPart(resources.getTexture(Textures::rightSlider), glm::vec2(2,3), glm::vec2(102,0)); 
-	slider.setCursor(resources.getTexture(Textures::sliderCursor), glm::vec2(5,12), glm::vec2(2,-5));
+	slider.setLeftPart(resources->getTexture(Textures::leftSlider), glm::vec2(2,3), glm::vec2(0,0)); 
+	slider.setMiddlePart(resources->getTexture(Textures::middleSlider), glm::vec2(100,3), glm::vec2(2,0)); 
+	slider.setRightPart(resources->getTexture(Textures::rightSlider), glm::vec2(2,3), glm::vec2(102,0)); 
+	slider.setCursor(resources->getTexture(Textures::sliderCursor), glm::vec2(5,12), glm::vec2(2,-5));
 	slider.setOnChange(
 	    [this](int value)
 	    {
 		kte::Audio::masterVolume = 0.01f * value;
-		this->audioStream.play(resources.getAudio(Audio::menuHover));
+		this->audioStream.play(resources->getAudio(Audio::menuHover));
 	    }
 	);
 	
 	checkBox = GUICheckBox(&gui, glm::vec2(160,142));
-	checkBox.setCheckBox(resources.getTexture(Textures::guiCheckBox), glm::vec2(0,0), glm::vec2(32,32));
-	checkBox.setCheckMark(resources.getTexture(Textures::guiCheckMark), glm::vec2(0,0), glm::vec2(32,32));
+	checkBox.setCheckBox(resources->getTexture(Textures::guiCheckBox), glm::vec2(0,0), glm::vec2(32,32));
+	checkBox.setCheckMark(resources->getTexture(Textures::guiCheckMark), glm::vec2(0,0), glm::vec2(32,32));
 	checkBox.setOnChangeValue(
 	    [](bool value)
 	    {
@@ -52,8 +52,8 @@ public:
 	);
 	
 	analyticsCheckBox = GUICheckBox(&gui, glm::vec2(80,200));
-	analyticsCheckBox.setCheckBox(resources.getTexture(Textures::guiCheckBox), glm::vec2(0,0), glm::vec2(32,32));
-	analyticsCheckBox.setCheckMark(resources.getTexture(Textures::guiCheckMark), glm::vec2(0,0), glm::vec2(32,32));
+	analyticsCheckBox.setCheckBox(resources->getTexture(Textures::guiCheckBox), glm::vec2(0,0), glm::vec2(32,32));
+	analyticsCheckBox.setCheckMark(resources->getTexture(Textures::guiCheckMark), glm::vec2(0,0), glm::vec2(32,32));
 	analyticsCheckBox.setOnChangeValue(
 	    [](bool value)
 	    {
@@ -85,24 +85,11 @@ public:
 
     bool loadData()
     {
-	if(!resources.loadTextureFromFile(Textures::leftSlider))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::middleSlider))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::rightSlider))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::sliderCursor))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::guiCheckMark))
-	    return false;
-	if(!resources.loadTextureFromFile(Textures::guiCheckBox))
-	    return false;
-
-	if(!resources.loadAudioFromFile(Audio::menuHover))
+	if(!resources->loadAudioFromFile(Audio::menuHover))
 	    return false;
 
 	
-    return true;
+	return true;
     }
     
 private: 

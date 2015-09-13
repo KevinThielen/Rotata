@@ -348,32 +348,9 @@ CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Te
 
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/TextTechnique.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/TextTechnique.cpp.o
 
-CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
-CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_14)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o"
-	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp
-
-CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.i"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
-
-CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.s"
-	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
-
-CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o.requires:
-.PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o.requires
-
-CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o.provides: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o.provides.build
-.PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o.provides
-
-CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o
-
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o"
 	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp
 
@@ -393,6 +370,29 @@ CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Ge
 .PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o.provides
 
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_15)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o"
+	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o.requires:
+.PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o.requires
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o.provides: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o.provides.build
+.PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o.provides
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o
 
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp
@@ -417,9 +417,55 @@ CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Tim
 
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp.o
 
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_17)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o"
+	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o.requires:
+.PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o.requires
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o.provides: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o.provides.build
+.PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o.provides
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_18)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o"
+	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o.requires:
+.PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o.requires
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o.provides: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o.provides.build
+.PHONY : CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o.provides
+
+CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o
+
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp.o"
 	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp
 
@@ -442,7 +488,7 @@ CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.
 
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp.o"
 	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp
 
@@ -465,7 +511,7 @@ CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp.
 
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.o"
 	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp
 
@@ -488,7 +534,7 @@ CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.
 
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o: /home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o"
 	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o -c /home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp
 
@@ -509,6 +555,29 @@ CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.
 
 CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o
 
+CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o: CMakeFiles/Rubix.bc.dir/flags.make
+CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o: ../src/Level/Block.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kevin/Desktop/Projects/C++/Rubix/webGL/CMakeFiles $(CMAKE_PROGRESS_23)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o"
+	/home/kevin/Desktop/emsdk_portable/emscripten/master/em++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o -c /home/kevin/Desktop/Projects/C++/Rubix/src/Level/Block.cpp
+
+CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o.requires:
+.PHONY : CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o.requires
+
+CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o.provides: CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Rubix.bc.dir/build.make CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o.provides.build
+.PHONY : CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o.provides
+
+CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o.provides.build: CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o
+
 # Object files for target Rubix.bc
 Rubix_bc_OBJECTS = \
 "CMakeFiles/Rubix.bc.dir/main.cpp.o" \
@@ -524,13 +593,16 @@ Rubix_bc_OBJECTS = \
 "CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Texture.cpp.o" \
 "CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Text.cpp.o" \
 "CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/TextTechnique.cpp.o" \
-"CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o" \
 "CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o" \
+"CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o" \
 "CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp.o" \
+"CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o" \
+"CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o" \
 "CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp.o" \
 "CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp.o" \
 "CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.o" \
-"CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o"
+"CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o" \
+"CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o"
 
 # External object files for target Rubix.bc
 Rubix_bc_EXTERNAL_OBJECTS =
@@ -548,13 +620,16 @@ Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/G
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Texture.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Text.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/TextTechnique.cpp.o
-Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o
+Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp.o
+Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o
+Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o
+Rubix.bc: CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/build.make
 Rubix.bc: /usr/local/lib/libfreetype.so
 Rubix.bc: CMakeFiles/Rubix.bc.dir/link.txt
@@ -578,13 +653,16 @@ CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Pro
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Texture.cpp.o.requires
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Text.cpp.o.requires
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/TextTechnique.cpp.o.requires
-CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Font.cpp.o.requires
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Graphics/Geometries.cpp.o.requires
+CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Analytics.cpp.o.requires
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Utility/Time.cpp.o.requires
+CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Audio/AudioManager.cpp.o.requires
+CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Resources/ResourcePackage.cpp.o.requires
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameEngine.cpp.o.requires
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/Window.cpp.o.requires
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/GameObject.cpp.o.requires
 CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o.requires
+CMakeFiles/Rubix.bc.dir/requires: CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o.requires
 .PHONY : CMakeFiles/Rubix.bc.dir/requires
 
 CMakeFiles/Rubix.bc.dir/clean:

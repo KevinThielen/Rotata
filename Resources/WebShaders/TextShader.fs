@@ -6,5 +6,6 @@ varying vec2 fragmentUV;
 
 void main()
 {
-    gl_FragColor =  fragmentColor * texture2D(texture, fragmentUV);
+    gl_FragColor = fragmentColor;
+    gl_FragColor.a = texture2D(texture, fragmentUV).r;
 }
