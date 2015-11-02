@@ -18,11 +18,11 @@ void update()
 int main()
 {
   
- //   kte::Analytics::enable(false);
+    //kte::Analytics::enable(false);
     kte::GameEngine* gameEngine = kte::GameEngine::instance();
     
-    kte::Audio::masterVolume = 0.1f;
-    
+    kte::Sound::masterVolume = 0.1f;
+  
 #if defined(EMSCRIPTEN)
   
     gameEngine->run(new MenuScene, kte::WindowDesc("Emscripten"), false);

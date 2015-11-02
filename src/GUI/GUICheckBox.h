@@ -17,6 +17,11 @@ public:
 	this->checked = checked;
     }
 
+    void setLayer(unsigned int layer)
+    {
+	checkBox.setLayer(layer);
+	checkMark.setLayer(layer+1);
+    }
     void setCheckBox(kte::Texture* texture, glm::vec2 position, glm::vec2 size)
     {
 	checkBox = kte::GameSprite(gameObject, texture);

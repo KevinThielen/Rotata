@@ -33,16 +33,17 @@ public:
     
     virtual bool init()
     {
-	//initDefaultSystem();
 	if(!loadData())
 	    return false;
 	
+// 	kte::GameEngine::instance()->getContext()->setWireframe();
 	
-	
-//  	kte::GameEngine::instance()->getContext()->setWireframe();
 	audioStream.initialize();
-	audioStream2.initialize();
+	bgmStream.initialize();
 	
+	
+	
+	bgmStream.play(resources->getAudio(Audio::bgm), true);
 	//read save file
 	serializer.read("save.dat");
 	
@@ -50,39 +51,18 @@ public:
 	background.setSize(800,600);
 	background.setLayer(ELayers::background);
 	
-	float leftOffset = 75.0f;
-	
-	titleText.resize(5);
-
+	float leftOffset = 10.0f;
+	titleText.resize(1);
 	titleText[0] = kte::Text();
 	titleText[0].setFont(resources->getFont(Fonts::title118));
 	titleText[0].setPosition((800-300)*0.5f-leftOffset, 20);
-	titleText[0].setString("R");
-	titleText[0].setColor(Color::RED);
+	titleText[0].setString("Rubix");
+	titleText[0].addColor(Color::RED);
+	titleText[0].addColor(Color::BLUE);
+	titleText[0].addColor(Color::GREEN);
+	titleText[0].addColor(Color::PURPLE);
+	titleText[0].addColor(Color::YELLOW);
 	
-	titleText[1] = kte::Text();
-	titleText[1].setFont(resources->getFont(Fonts::title118));
-	titleText[1].setPosition((800-300)*0.5f+100-leftOffset+25, 20);
-	titleText[1].setString("u");
-	titleText[1].setColor(Color::BLUE);
-	
-	titleText[2] = kte::Text();
-	titleText[2].setFont(resources->getFont(Fonts::title118));
-	titleText[2].setPosition((800-300)*0.5f+180-leftOffset+50, 20);
-	titleText[2].setString("b");
-	titleText[2].setColor(Color::GREEN);
-	
-	titleText[3] = kte::Text();
-	titleText[3].setFont(resources->getFont(Fonts::title118));
-	titleText[3].setPosition((800-300)*0.5f+255-leftOffset+75, 20);
-	titleText[3].setString("i");
-	titleText[3].setColor(Color::PURPLE);
-	
-	titleText[4] = kte::Text();
-	titleText[4].setFont(resources->getFont(Fonts::title118));
-	titleText[4].setPosition((800-300)*0.5f+300-leftOffset+80, 20);
-	titleText[4].setString("x");
-	titleText[4].setColor(Color::YELLOW);
 	
 	//stateNodes
 	levelSelectNode = background.getGameObject()->addChild();
@@ -177,7 +157,7 @@ public:
 	menuButtons[START_BUTTON].setOnReleaseEvent(
 	    [this](){
 		changeState(EMenuState::LEVEL_SELECT);
-		    this->audioStream2.play(resources->getAudio(Audio::menuSelect));
+		this->audioStream.play(resources->getAudio(Audio::menuSelect));
 	    }
 	);
 	
@@ -190,6 +170,7 @@ public:
 		    IGameScene* scene = new OptionsScene();
 	
 		    kte::GameEngine::instance()->pushScene(scene);
+		this->audioStream.play(resources->getAudio(Audio::menuSelect));
 	    }
 	);
 	
@@ -198,6 +179,7 @@ public:
 	menuButtons[EXIT_BUTTON].setOnReleaseEvent(
 	    [this](){
 		changeState(EMenuState::EXIT);
+		this->audioStream.play(resources->getAudio(Audio::menuSelect));
 	    }    
 	);
 	
@@ -277,7 +259,7 @@ public:
 		[this, i]()
 		{
 		    kte::GameEngine* engine = kte::GameEngine::instance();
-		    this->audioStream2.play(resources->getAudio(Audio::menuSelect));
+		    this->audioStream.play(resources->getAudio(Audio::menuSelect));
 		    
 		    GameScene* scene = new GameScene(levels, i);
 	
@@ -397,7 +379,7 @@ public:
 	
 		    engine->pushScene(scene);
 		    
-		    this->audioStream2.play(resources->getAudio(Audio::menuSelect));
+		    this->audioStream.play(resources->getAudio(Audio::menuSelect));
 		});
 		
 		levelTiles[i].setOnMouseOverEvent(
@@ -473,17 +455,9 @@ public:
 
     bool loadData()
     {
-	if(!resources->loadAudioFromFile(Audio::menuHover))
+	if(!resources->loadPackage("Menu"))
 	    return false;
-	
-	if(!resources->loadAudioFromFile(Audio::menuSelect))
-	    return false;
-	
-	
-	if(!resources->loadPackage("Game"))
-	    return false;
- 	if(!resources->loadPackage("General"))
- 	    return false;
+
 	
 	return true;
     }
@@ -545,7 +519,7 @@ private:
     kte::GameObject* levelDescriptionNode;
     
     kte::AudioSource audioStream;
-    kte::AudioSource audioStream2;
+    kte::AudioSource bgmStream;
    
     bool showDescription;
     const bool CHEAT_MODE = true;

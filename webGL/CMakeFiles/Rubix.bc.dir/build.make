@@ -631,7 +631,6 @@ Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/G
 Rubix.bc: CMakeFiles/Rubix.bc.dir/home/kevin/Desktop/Projects/C++/KTEngine/src/IGameScene.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/src/Level/Block.cpp.o
 Rubix.bc: CMakeFiles/Rubix.bc.dir/build.make
-Rubix.bc: /usr/local/lib/libfreetype.so
 Rubix.bc: CMakeFiles/Rubix.bc.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable Rubix.bc"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Rubix.bc.dir/link.txt --verbose=$(VERBOSE)

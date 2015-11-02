@@ -19,7 +19,13 @@ public:
 	this->steps = steps;	
     }
 
-    
+    void setLayer(unsigned int layer)
+    {
+	left.setLayer(layer);
+	middle.setLayer(layer);
+	right.setLayer(layer);
+	cursor.setLayer(middle.getLayer()+1);
+    }
     void setLeftPart(kte::Texture* texture, glm::vec2 size, glm::vec2 position)
     {
 	left = kte::GameSprite(gameObject, texture);

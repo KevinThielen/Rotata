@@ -27,7 +27,6 @@ public:
     
     virtual bool init()
     {
-        initDefaultSystem();
         if(!loadData())
 	    return false;
 	
@@ -295,18 +294,7 @@ public:
 
     bool loadData()
     {
-     
-	if(!resources->loadAudioFromFile(Audio::rotation))
-	    return false;
-	if(!resources->loadAudioFromFile(Audio::rotationEnd))
-	    return false;
-	if(!resources->loadAudioFromFile(Audio::rotatorClick))
-	    return false;
-	if(!resources->loadAudioFromFile(Audio::finished))
-	    return false;
-	if(!resources->loadPackage("fonts.kte"))
-	    return false;
-	if(!resources->loadPackage("General"))
+	if(!resources->loadPackage("Game"))
 	    return false;
 	
 	return true;

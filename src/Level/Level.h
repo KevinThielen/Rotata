@@ -216,13 +216,13 @@ public:
 	    rotationScale = 1.0f;
 	
 	float fractionalDigits = (int)((timer-(int)timer)*10);
-
+	timerText.setString(std::to_string((int)getTimer()) + "." +std::to_string((int)fractionalDigits));
 
 	//
 //	rotationText.setString(std::to_string(rotations));
 	//rotationText.setSize(rotationScale, rotationScale);
 	scene->displayText(levelText);
-	//scene->displayText(timerText);
+	scene->displayText(timerText);
     }
     
     float getTimer() 

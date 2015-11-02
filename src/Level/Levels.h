@@ -31,94 +31,8 @@ public:
 	levelLayouts[1] = LevelData("Intro II", blocks);
 	}
 	
-	{
-	std::vector<BlockDescription> blocks;
-	blocks.push_back(BlockDescription(glm::vec2(1,0) , Color::BLACK));  
-	blocks.push_back(BlockDescription(glm::vec2(3,0) , Color::BLACK));  
-	blocks.push_back(BlockDescription(glm::vec2(5,0) , Color::BLACK));  
-
-	blocks.push_back(BlockDescription(glm::vec2(0,1) , Color::RED));  
-	blocks.push_back(BlockDescription(glm::vec2(2,1) , Color::RED));  
-	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::RED));  
-	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::RED));  
-
 	
-	blocks.push_back(BlockDescription(glm::vec2(1,2) , Color::YELLOW));  
-	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::YELLOW));  
-	blocks.push_back(BlockDescription(glm::vec2(5,2) , Color::YELLOW));  
-
-	levelLayouts[2] = LevelData("Germany", blocks);
-	}
-	
-	{
-	std::vector<BlockDescription> blocks;
-	blocks.push_back(BlockDescription(glm::vec2(5,2) , Color::RED));
-	
-	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::YELLOW));  
-	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::GREEN));  
-	blocks.push_back(BlockDescription(glm::vec2(6,3) , Color::BLACK));  
-	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::WHITE));  
-
-	blocks.push_back(BlockDescription(glm::vec2(3,0) , Color::PURPLE));  
-	blocks.push_back(BlockDescription(glm::vec2(3,4) , Color::RED));  
-	blocks.push_back(BlockDescription(glm::vec2(7,4) , Color::RED));  
-	blocks.push_back(BlockDescription(glm::vec2(7,0) , Color::GREEN));  
-
-	levelLayouts[3] = LevelData("X-Stream", blocks);
-	
-	}
-	
-			{
-	std::vector<BlockDescription> blocks;
-	
-	blocks.push_back(BlockDescription(glm::vec2(1,1) , Color::RED));
-	blocks.push_back(BlockDescription(glm::vec2(3,3) , Color::BLUE));
-	blocks.push_back(BlockDescription(glm::vec2(2,2) , Color::BLACK));
-	blocks.push_back(BlockDescription(glm::vec2(3,1) , Color::GREEN));
-	blocks.push_back(BlockDescription(glm::vec2(1,3) , Color::PINK));
-
-
-	levelLayouts[4] = LevelData("Extra", blocks);
-	
-	}
-	
-	
-	{
-	std::vector<BlockDescription> blocks;
-	
-	blocks.push_back(BlockDescription(glm::vec2(0,5) , Color::PINK));
-	blocks.push_back(BlockDescription(glm::vec2(2,5) , Color::PINK));
-	blocks.push_back(BlockDescription(glm::vec2(4,5) , Color::PINK));
-	blocks.push_back(BlockDescription(glm::vec2(6,5) , Color::PINK));
-	blocks.push_back(BlockDescription(glm::vec2(8,5) , Color::PINK));
-	blocks.push_back(BlockDescription(glm::vec2(10,5) , Color::PINK));
-	
-	
-	blocks.push_back(BlockDescription(glm::vec2(1,4) , Color::YELLOW));
-	blocks.push_back(BlockDescription(glm::vec2(3,4) , Color::YELLOW));
-	blocks.push_back(BlockDescription(glm::vec2(5,4) , Color::YELLOW));
-	blocks.push_back(BlockDescription(glm::vec2(7,4) , Color::YELLOW));
-	blocks.push_back(BlockDescription(glm::vec2(9,4) , Color::YELLOW));
-	
-	blocks.push_back(BlockDescription(glm::vec2(2,3) , Color::RED));
-	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::RED));
-	blocks.push_back(BlockDescription(glm::vec2(6,3) , Color::RED));
-	blocks.push_back(BlockDescription(glm::vec2(8,3) , Color::RED));
-
-	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::BLUE));
-	blocks.push_back(BlockDescription(glm::vec2(5, 2) , Color::BLUE));
-	blocks.push_back(BlockDescription(glm::vec2(7,2) , Color::BLUE));
-
-	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::GREEN));
-	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::GREEN));
-
-	blocks.push_back(BlockDescription(glm::vec2(5,0) , Color::WHITE));
-
-	levelLayouts[5] = LevelData("Hanoi", blocks);
-	
-	}
-	
-	{
+		{
 	std::vector<BlockDescription> blocks;
 	
 	blocks.push_back(BlockDescription(glm::vec2(3,3) , Color::RED));
@@ -129,9 +43,24 @@ public:
 	
 
 
-	levelLayouts[6] = LevelData("Glider", blocks);
+	levelLayouts[2] = LevelData("Glider", blocks);
 	
 	}
+	
+		
+	{
+	std::vector<BlockDescription> blocks;
+	
+	
+	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::GREEN));
+	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::GREEN));
+
+	blocks.push_back(BlockDescription(glm::vec2(5,0) , Color::WHITE));
+
+	levelLayouts[3] = LevelData("Hanoi", blocks);
+	
+	}
+	
 	{
 
 	std::vector<BlockDescription> blocks;
@@ -144,9 +73,60 @@ public:
 	
 
 
-	levelLayouts[7] = LevelData("Together", blocks);
+	levelLayouts[4] = LevelData("Together", blocks);
 	
 	}
+	
+	
+	
+	{
+	std::vector<BlockDescription> blocks;
+	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::RED));  
+	blocks.push_back(BlockDescription(glm::vec2(3,4) , Color::BLUE));  
+	blocks.push_back(BlockDescription(glm::vec2(4,5) , Color::YELLOW));  
+	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::ORANGE));  
+	blocks.push_back(BlockDescription(glm::vec2(2,3) , Color::WHITE));  
+
+
+	levelLayouts[5] = LevelData("Intro III", blocks);
+	}
+	
+	
+	
+		{
+	std::vector<BlockDescription> blocks;
+	
+
+
+	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(5, 2) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(7,2) , Color::BLUE));
+
+	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::GREEN));
+	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::GREEN));
+
+	blocks.push_back(BlockDescription(glm::vec2(5,0) , Color::WHITE));
+
+	levelLayouts[6] = LevelData("Hanoi II", blocks);
+	
+	}
+	
+	{
+	std::vector<BlockDescription> blocks;
+	
+	blocks.push_back(BlockDescription(glm::vec2(1,1) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(3,3) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(2,2) , Color::BLACK));
+	blocks.push_back(BlockDescription(glm::vec2(3,1) , Color::GREEN));
+	blocks.push_back(BlockDescription(glm::vec2(1,3) , Color::PINK));
+
+
+	levelLayouts[7] = LevelData("Extra", blocks);
+	
+	}
+	
+	
+
 	{
 
 	std::vector<BlockDescription> blocks;
@@ -246,17 +226,7 @@ public:
 	
 	}
 
-	{
-	std::vector<BlockDescription> blocks;
-	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::RED));  
-	blocks.push_back(BlockDescription(glm::vec2(3,4) , Color::BLUE));  
-	blocks.push_back(BlockDescription(glm::vec2(4,5) , Color::YELLOW));  
-	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::ORANGE));  
-	blocks.push_back(BlockDescription(glm::vec2(2,3) , Color::WHITE));  
 
-
-	levelLayouts[13] = LevelData("Intro III", blocks);
-	}
 	{
 	std::vector<BlockDescription> blocks;
 	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::RED));  
@@ -271,7 +241,7 @@ public:
 	blocks.push_back(BlockDescription(glm::vec2(6,3) , Color::WHITE));  
 	
 
-	levelLayouts[14] = LevelData("Victory", blocks);
+	levelLayouts[13] = LevelData("Victory", blocks);
 	}
 	
 	{
@@ -292,9 +262,136 @@ public:
 	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::PURPLE));  
 	
 
-	levelLayouts[15] = LevelData("Victory II", blocks);
+	levelLayouts[14] = LevelData("Victory II", blocks);
 	}
 	
+
+	{
+	std::vector<BlockDescription> blocks;
+	blocks.push_back(BlockDescription(glm::vec2(1,0) , Color::BLACK));  
+	blocks.push_back(BlockDescription(glm::vec2(3,0) , Color::BLACK));  
+	blocks.push_back(BlockDescription(glm::vec2(5,0) , Color::BLACK));  
+
+	blocks.push_back(BlockDescription(glm::vec2(0,1) , Color::RED));  
+	blocks.push_back(BlockDescription(glm::vec2(2,1) , Color::RED));  
+	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::RED));  
+	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::RED));  
+
+	
+	blocks.push_back(BlockDescription(glm::vec2(1,2) , Color::YELLOW));  
+	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::YELLOW));  
+	blocks.push_back(BlockDescription(glm::vec2(5,2) , Color::YELLOW));  
+
+	levelLayouts[15] = LevelData("Germany", blocks);
+	}
+	
+	{
+	std::vector<BlockDescription> blocks;
+	blocks.push_back(BlockDescription(glm::vec2(5,2) , Color::RED));
+	
+	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::YELLOW));  
+	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::GREEN));  
+	blocks.push_back(BlockDescription(glm::vec2(6,3) , Color::BLACK));  
+	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::WHITE));  
+
+	blocks.push_back(BlockDescription(glm::vec2(3,0) , Color::PURPLE));  
+	blocks.push_back(BlockDescription(glm::vec2(3,4) , Color::RED));  
+	blocks.push_back(BlockDescription(glm::vec2(7,4) , Color::RED));  
+	blocks.push_back(BlockDescription(glm::vec2(7,0) , Color::GREEN));  
+
+	levelLayouts[16] = LevelData("X-Stream", blocks);
+	
+	}
+	
+
+	
+
+	
+
+		{
+	std::vector<BlockDescription> blocks;
+	
+
+	
+	blocks.push_back(BlockDescription(glm::vec2(2,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(6,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(8,3) , Color::RED));
+
+	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(5, 2) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(7,2) , Color::BLUE));
+
+	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::GREEN));
+	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::GREEN));
+
+	blocks.push_back(BlockDescription(glm::vec2(5,0) , Color::WHITE));
+
+	levelLayouts[17] = LevelData("Hanoi III", blocks);
+	
+	}
+		{
+	std::vector<BlockDescription> blocks;
+	
+
+	blocks.push_back(BlockDescription(glm::vec2(1,4) , Color::YELLOW));
+	blocks.push_back(BlockDescription(glm::vec2(3,4) , Color::YELLOW));
+	blocks.push_back(BlockDescription(glm::vec2(5,4) , Color::YELLOW));
+	blocks.push_back(BlockDescription(glm::vec2(7,4) , Color::YELLOW));
+	blocks.push_back(BlockDescription(glm::vec2(9,4) , Color::YELLOW));
+	
+	blocks.push_back(BlockDescription(glm::vec2(2,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(6,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(8,3) , Color::RED));
+
+	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(5, 2) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(7,2) , Color::BLUE));
+
+	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::GREEN));
+	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::GREEN));
+
+	blocks.push_back(BlockDescription(glm::vec2(5,0) , Color::WHITE));
+
+	levelLayouts[18] = LevelData("Hanoi IV", blocks);
+	
+	}
+	
+			{
+	std::vector<BlockDescription> blocks;
+	
+	blocks.push_back(BlockDescription(glm::vec2(0,5) , Color::PINK));
+	blocks.push_back(BlockDescription(glm::vec2(2,5) , Color::PINK));
+	blocks.push_back(BlockDescription(glm::vec2(4,5) , Color::PINK));
+	blocks.push_back(BlockDescription(glm::vec2(6,5) , Color::PINK));
+	blocks.push_back(BlockDescription(glm::vec2(8,5) , Color::PINK));
+	blocks.push_back(BlockDescription(glm::vec2(10,5) , Color::PINK));
+	
+	
+	blocks.push_back(BlockDescription(glm::vec2(1,4) , Color::YELLOW));
+	blocks.push_back(BlockDescription(glm::vec2(3,4) , Color::YELLOW));
+	blocks.push_back(BlockDescription(glm::vec2(5,4) , Color::YELLOW));
+	blocks.push_back(BlockDescription(glm::vec2(7,4) , Color::YELLOW));
+	blocks.push_back(BlockDescription(glm::vec2(9,4) , Color::YELLOW));
+	
+	blocks.push_back(BlockDescription(glm::vec2(2,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(4,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(6,3) , Color::RED));
+	blocks.push_back(BlockDescription(glm::vec2(8,3) , Color::RED));
+
+	blocks.push_back(BlockDescription(glm::vec2(3,2) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(5, 2) , Color::BLUE));
+	blocks.push_back(BlockDescription(glm::vec2(7,2) , Color::BLUE));
+
+	blocks.push_back(BlockDescription(glm::vec2(4,1) , Color::GREEN));
+	blocks.push_back(BlockDescription(glm::vec2(6,1) , Color::GREEN));
+
+	blocks.push_back(BlockDescription(glm::vec2(5,0) , Color::WHITE));
+
+	levelLayouts[19] = LevelData("Hanoi V", blocks);
+	
+	}
     }
     
     LevelData getLevel(unsigned int index) { 
